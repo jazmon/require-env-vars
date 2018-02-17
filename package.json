@@ -5,6 +5,15 @@
   "main": "dist/index.js",
   "author": "Atte Huhtakangas <atte.huhtakangas@gmail.com>",
   "license": "MIT",
+  "repository": {
+    "url": "git+https://github.com/jazmon/require-env-vars.git",
+    "type": "git"
+  },
+  "bugs": {
+    "url": "https://github.com/jazmon/require-env-vars/issues"
+  },
+  "homepage": "https://github.com/jazmon/require-env-vars#readme",
+  "files": ["build", "LICENSE", "README.md"],
   "private": false,
   "engines": {
     "node": "^8.9.1",
@@ -15,7 +24,8 @@
     "build": "yarn run build:prebuild && tsc --pretty",
     "test": "NODE_ENV=test NODE_PATH=src jest",
     "test:watch": "yarn test --watch",
-    "test:ci": "yarn test --forceExit"
+    "test:ci": "yarn test --forceExit",
+    "prepublishOnly": "yarn build"
   },
   "jest": {
     "transform": {
@@ -39,5 +49,14 @@
     "tslint-config-airbnb": "^5.6.0",
     "tslint-config-prettier": "^1.8.0",
     "typescript": "^2.7.2"
-  }
+  },
+  "keywords": [
+    "node",
+    "env",
+    "environment",
+    "variable",
+    "var",
+    "config",
+    "configuration"
+  ]
 }
