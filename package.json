@@ -44,7 +44,6 @@
     "prettier": "^1.10.2",
     "rimraf": "^2.6.2",
     "ts-jest": "^22.0.4",
-    "ts-node": "^4.1.0",
     "tslint": "^5.9.1",
     "tslint-config-airbnb": "^5.6.0",
     "tslint-config-prettier": "^1.8.0",
@@ -58,5 +57,8 @@
     "var",
     "config",
     "configuration"
-  ]
+  ],
+  "publishConfig": {
+    "access": "public"
+  }
 }
