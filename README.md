@@ -7,6 +7,7 @@ A micro-module to ensure your Node process env has all the necessary variables t
 * Check your config object for missing env variables
 * Make some config keys optional
 * Default values for keys
+* Nested objects in config
 
 ## Example usage
 
@@ -19,6 +20,11 @@ const config = {
   LOG_LEVEL: process.env.LOG_LEVEL || 'info', // A value with default
   LOG_FILE: process.env.LOG_FILE || null, // Maybe value
   PRE_DEFINED_VAR: 'foobar',
+  // Nested object
+  FOOBAR: {
+    URL: process.env.FOOBAR_URL as string,
+    API_KEY: process.env.FOOBAR_API_KEY as string,
+  }
 };
 ```
 

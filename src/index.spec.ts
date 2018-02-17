@@ -65,7 +65,25 @@ describe('requireConfigKeys', () => {
     const missingEnvVars = requireConfigKeys(config);
     expect(missingEnvVars).toHaveLength(0);
   });
-  // it('should allow objects');
+  it('should allow objects', () => {
+    process.env = {
+      FOO: 'foo',
+      BAR: 'bar',
+    };
+    const config: Config = {
+      FOO: process.env.FOO as string,
+      FOO2: process.env.FOO2 as string,
+      NESTED: {
+        BAR: process.env.BAR as string,
+        BAR2: process.env.BAR2 as string,
+      },
+      BAZ: 'baz',
+    };
+    const missingEnvVars = requireConfigKeys(config);
+    expect(missingEnvVars).toHaveLength(2);
+    expect(missingEnvVars).toContain('FOO2');
+    expect(missingEnvVars).toContain('BAR2');
+  });
 });
 
 describe('requireConfigVars', () => {
