@@ -1,0 +1,22 @@
+{
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/dist": true,
+    "**/build": true
+  },
+  "typescript.referencesCodeLens.enabled": true,
+  "typescript.implementationsCodeLens.enabled": true,
+  "prettier.trailingComma": "all",
+  "tslint.ignoreDefinitionFiles": false,
+  "prettier.semi": true,
+  "prettier.useTabs": false,
+  "prettier.singleQuote": true,
+  "tslint.exclude": "**/node_modules/**/*",
+  "tslint.autoFixOnSave": true,
+  "prettier.tabWidth": 2,
+  "prettier.printWidth": 80,
+  "flow.enabled": false,
+  "typescript.format.enable": false,
+  "javascript.format.enable": false,
+  "json.format.enable": false
+}
