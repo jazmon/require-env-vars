@@ -1,6 +1,6 @@
 {
   "name": "@jazmon/require-env-vars",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Ensure env vars are specified that are in config",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -14,7 +14,11 @@
     "url": "https://github.com/jazmon/require-env-vars/issues"
   },
   "homepage": "https://github.com/jazmon/require-env-vars#readme",
-  "files": ["dist", "LICENSE", "README.md"],
+  "files": [
+    "dist",
+    "LICENSE",
+    "README.md"
+  ],
   "private": false,
   "engines": {
     "node": "^8.9.1",
