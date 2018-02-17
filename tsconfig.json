@@ -4,7 +4,7 @@
   "compilerOptions": {
     "target": "ES2016",
     "module": "commonjs",
-    "allowJs": true,
+    "allowJs": false,
     "checkJs": false,
     "sourceMap": true,
     "outDir": "./dist",

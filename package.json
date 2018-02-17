@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Ensure env vars are specified that are in config",
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "author": "Atte Huhtakangas <atte.huhtakangas@gmail.com>",
   "license": "MIT",
   "repository": {
@@ -25,7 +26,7 @@
   },
   "scripts": {
     "build:prebuild": "rimraf dist",
-    "build": "yarn run build:prebuild && tsc --pretty",
+    "build": "yarn run build:prebuild && tsc --pretty --declaration",
     "test": "NODE_ENV=test NODE_PATH=src jest",
     "test:watch": "yarn test --watch",
     "test:ci": "yarn test --forceExit",
