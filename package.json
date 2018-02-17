@@ -14,11 +14,7 @@
     "url": "https://github.com/jazmon/require-env-vars/issues"
   },
   "homepage": "https://github.com/jazmon/require-env-vars#readme",
-  "files": [
-    "build",
-    "LICENSE",
-    "README.md"
-  ],
+  "files": ["dist", "LICENSE", "README.md"],
   "private": false,
   "engines": {
     "node": "^8.9.1",
