@@ -1,6 +1,6 @@
 {
   "name": "@jazmon/require-env-vars",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "Ensure env vars are specified that are in config",
   "main": "dist/index.js",
   "author": "Atte Huhtakangas <atte.huhtakangas@gmail.com>",
