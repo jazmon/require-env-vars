@@ -1,0 +1,9 @@
+{
+  "name": "require-env-vars",
+  "version": "1.0.0",
+  "description": "Ensure env vars are specified that are in config",
+  "main": "index.js",
+  "author": "Atte Huhtakangas <atte.huhtakangas@gmail.com>",
+  "license": "MIT",
+  "private": false
+}
