@@ -1,6 +1,6 @@
 {
   "name": "@jazmon/require-env-vars",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Ensure env vars are specified that are in config",
   "main": "dist/index.js",
   "author": "Atte Huhtakangas <atte.huhtakangas@gmail.com>",
@@ -13,7 +13,11 @@
     "url": "https://github.com/jazmon/require-env-vars/issues"
   },
   "homepage": "https://github.com/jazmon/require-env-vars#readme",
-  "files": ["build", "LICENSE", "README.md"],
+  "files": [
+    "build",
+    "LICENSE",
+    "README.md"
+  ],
   "private": false,
   "engines": {
     "node": "^8.9.1",
@@ -32,7 +36,11 @@
       ".ts": "<rootDir>/node_modules/ts-jest/preprocessor.js"
     },
     "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|js)$",
-    "moduleFileExtensions": ["ts", "json", "js"],
+    "moduleFileExtensions": [
+      "ts",
+      "json",
+      "js"
+    ],
     "testEnvironment": "node",
     "verbose": false
   },
