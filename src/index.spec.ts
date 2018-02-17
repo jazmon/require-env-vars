@@ -1,4 +1,11 @@
-import { requireConfigKeys, requireConfigVars, Config } from './index';
+import {
+  requireConfigKeys,
+  requireConfigVars,
+  Config,
+  requireEnvVars,
+  throwMissingConfigVars,
+  throwMissingEnvVars,
+} from './index';
 
 let originalEnv: NodeJS.ProcessEnv;
 
@@ -145,5 +152,59 @@ describe('requireConfigVars', () => {
     expect(missingEnvVars).toHaveLength(2);
     expect(missingEnvVars).toContain('FOO');
     expect(missingEnvVars).toContain('BAR');
+  });
+});
+
+describe('throwMissingConfigVars', () => {
+  it('should throw if some variables are not in env', () => {
+    process.env = {
+      FOO: 'foo',
+      BAR: 'bar',
+    };
+    const config: Config = {
+      FOO: process.env.FOO as string,
+      FOO2: process.env.FOO2 as string,
+      NESTED: {
+        BAR: process.env.BAR as string,
+        BAR2: process.env.BAR2 as string,
+      },
+      BAZ: 'baz',
+    };
+    const testFn = () => {
+      throwMissingConfigVars(config);
+    };
+    expect(testFn).toThrowError();
+  });
+});
+
+describe('requireEnvVars', () => {
+  it('should require env vars', () => {
+    process.env = {
+      FOO: 'foo',
+    };
+    const config: Config = {
+      FOO: process.env.FOO,
+      BAR: process.env.BAR,
+    };
+    const missingEnvVars = requireEnvVars(['FOO', 'BAR']);
+    expect(missingEnvVars).toHaveLength(1);
+    expect(missingEnvVars).toContain('BAR');
+  });
+});
+
+describe('throwMissingEnvVars', () => {
+  it('should throw required env vars', () => {
+    process.env = {
+      FOO: 'foo',
+    };
+    const config: Config = {
+      FOO: process.env.FOO,
+      BAR: process.env.BAR,
+    };
+
+    const testFn = () => {
+      throwMissingEnvVars(['FOO', 'BAR']);
+    };
+    expect(testFn).toThrowError();
   });
 });

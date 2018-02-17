@@ -28,4 +28,35 @@ export const requireConfigVars = (...configs: Config[]): string[] => {
   );
 };
 
+export const throwMissingConfigVars = (...configs: Config[]) => {
+  const missingConfigVars = requireConfigVars(...configs);
+  if (missingConfigVars.length > 0) {
+    throw new Error(
+      `Rerquired environment variables are not defined! ${JSON.stringify(
+        missingConfigVars,
+      )}`,
+    );
+  }
+};
+
+export const requireEnvVars = (envVars: string[]) => {
+  const missingEnvVars: string[] = [];
+  envVars.forEach(envVar => {
+    if (process.env[envVar] === undefined) {
+      missingEnvVars.push(envVar);
+    }
+  });
+  return missingEnvVars;
+};
+
+export const throwMissingEnvVars = (envVars: string[]) => {
+  const missingEnvVars = requireEnvVars(envVars);
+  if (missingEnvVars.length > 0)
+    throw new Error(
+      `Required enviroment variables are not defined! ${JSON.stringify(
+        missingEnvVars,
+      )}`,
+    );
+};
+
 export default requireConfigVars;
