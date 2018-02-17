@@ -1,5 +1,5 @@
 {
-  "name": "require-env-vars",
+  "name": "@jazmon/require-env-vars",
   "version": "1.0.0",
   "description": "Ensure env vars are specified that are in config",
   "main": "dist/index.js",
