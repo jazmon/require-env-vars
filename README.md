@@ -20,6 +20,8 @@ const config = {
   API_KEY: process.env.API_KEY as string,
   LOG_LEVEL: process.env.LOG_LEVEL || 'info', // A value with default
   LOG_FILE: process.env.LOG_FILE || null, // Maybe value
+  // Numerical value, must be parsed since all process.env values are strings
+  MY_COOL_NUMBER: parseInt(process.env.MY_COOL_NUMBER, 10),
   PRE_DEFINED_VAR: 'foobar',
   // Nested object
   FOOBAR: {
