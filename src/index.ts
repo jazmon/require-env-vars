@@ -32,7 +32,7 @@ export const throwMissingConfigVars = (...configs: Config[]) => {
   const missingConfigVars = requireConfigVars(...configs);
   if (missingConfigVars.length > 0) {
     throw new Error(
-      `Rerquired environment variables are not defined! ${JSON.stringify(
+      `Required environment variables are not defined! ${JSON.stringify(
         missingConfigVars,
       )}`,
     );
