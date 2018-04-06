@@ -1,5 +1,5 @@
 export interface Config {
-  [key: string]: string | null | Config;
+  [key: string]: string | number | null | Config;
 }
 
 export const requireConfigKeys = (config: Config) => {
@@ -10,7 +10,10 @@ export const requireConfigKeys = (config: Config) => {
       // Allow nested config objects
       if (typeof config[key] === 'object') {
         missingEnvVars.push(...requireConfigKeys(config[key] as Config));
-      } else if (typeof config[key] !== 'string') {
+      } else if (
+        typeof config[key] !== 'string' &&
+        typeof config[key] !== 'number'
+      ) {
         // Allow config keys with a default value
         missingEnvVars.push(key);
       }

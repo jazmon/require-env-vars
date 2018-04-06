@@ -72,6 +72,19 @@ describe('requireConfigKeys', () => {
     const missingEnvVars = requireConfigKeys(config);
     expect(missingEnvVars).toHaveLength(0);
   });
+  it('should allow numbers to be parsed directly', () => {
+    process.env = {
+      REQUIRED_1: 'foo',
+      REQUIRED_2: '42',
+    };
+    const config: Config = {
+      REQUIRED_1: process.env.REQUIRED_1,
+      REQUIRED_2: parseInt(process.env.REQUIRED_2, 10),
+      FOO: 'baz',
+    };
+    const missingEnvVars = requireConfigKeys(config);
+    expect(missingEnvVars).toHaveLength(0);
+  });
   it('should allow objects', () => {
     process.env = {
       FOO: 'foo',
