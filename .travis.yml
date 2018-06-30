@@ -1,16 +1,17 @@
 language: node_js
 node_js:
   - "8"
-env:
-  - NODE_ENV=test
-  - NODE_PATH=src
 cache:
   directories:
     - "node_modules"
   yarn: true
 
 install:
+  - npm install codecov -g
   - yarn install
   - yarn build
 script:
   - yarn test
+after_success:
+  - yarn test --coverage
+  - codecov
