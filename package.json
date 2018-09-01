@@ -20,13 +20,9 @@
     "README.md"
   ],
   "private": false,
-  "engines": {
-    "node": "^8.9.1",
-    "yarn": "^1.3.2"
-  },
   "scripts": {
-    "build:prebuild": "rimraf dist",
-    "build": "yarn run build:prebuild && tsc --pretty --declaration",
+    "prebuild": "rimraf dist",
+    "build": "tsc --pretty --declaration",
     "test": "NODE_ENV=test NODE_PATH=src jest",
     "test:watch": "yarn test --watch",
     "test:ci": "yarn test --forceExit",
