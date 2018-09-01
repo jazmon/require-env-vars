@@ -54,12 +54,13 @@ export const requireEnvVars = (envVars: string[]) => {
 
 export const throwMissingEnvVars = (envVars: string[]) => {
   const missingEnvVars = requireEnvVars(envVars);
-  if (missingEnvVars.length > 0)
+  if (missingEnvVars.length > 0) {
     throw new Error(
       `Required enviroment variables are not defined! ${JSON.stringify(
         missingEnvVars,
       )}`,
     );
+  }
 };
 
 export default requireConfigVars;
